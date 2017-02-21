@@ -1,6 +1,4 @@
 
-//public class ch30ex1 {
-
 		class HelloObject
 		{
 			String greeting;
@@ -24,6 +22,3 @@
 				anObject.speak();
 			}
 		}
-	//}
-
-
