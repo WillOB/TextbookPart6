@@ -3,18 +3,20 @@ package chapter31;
 public class Car2
 {
 	  // instance variables
-	  double first;   // Initial odometer reading
+	  int startMiles;   // Initial odometer reading
+	  int miles; //current odometer reading
+	  double gallons; //gallons put in at a fill up
 
 	  // constructor
-	  Car2( double firstReading)
+	  Car2( int firstReading)
 	  {
-	    first = firstReading ;
+	    startMiles = firstReading ;
 	  }
 
 	  // methods
-	  double calculateMPG(int miles, int prevMiles, int gallons)
+	  double calculateMPG()
 	  {
-	    return (miles - prevMiles)/ gallons ;
+	    return (miles - startMiles)/ gallons ;
 	  }
 	  
 	  boolean gasHog(){
@@ -25,7 +27,12 @@ public class Car2
 		  return this.calculateMPG() > 30.0;
 	  }
 
-	  void fillUp(int miles, double gallons){
-		  
+	  void fillUp(int newMiles, double addedGallons){
+		  miles = newMiles;
+		  gallons = addedGallons;
+	  }
+	  
+	  void resetStartMiles(){
+		  startMiles = miles;
 	  }
 }
