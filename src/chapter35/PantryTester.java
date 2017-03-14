@@ -19,24 +19,25 @@ class PantryTester
 	  boolean terminate = false;
 	  while(!terminate){
 
-	  System.out.println("Enter your selection (1, 2, or 3):");
-	  int selection = scan.nextInt();
-	  if(selection == -1){
-		  System.out.println("Good-by");
-		  terminate = true;
-	  }
-	  else{
-		  while(selection < 1 || selection > 3){
-			  System.out.println("Enter a number 1 to 3: ");
-			  selection = scan.nextInt();
+		  System.out.println("Enter your selection (1, 2, or 3):");
+		  int selection = scan.nextInt();
+		  if(selection == -1){
+			  System.out.println("Good-by");
+			  terminate = true;
 		  }
-		  System.out.println("Enter amount to spread:");
-		  int amount = scan.nextInt();
+		  else{
+			  while(selection < 1 || selection > 3){
+				  System.out.println("Enter a number 1 to 3: ");
+				  selection = scan.nextInt();
+			  }
+			  System.out.println("Enter amount to spread:");
+			  int amount = scan.nextInt();
 
-		  hubbard.select(selection);
-	  	hubbard.spread(amount);
-	  	hubbard.print();
-	  }
+			  hubbard.select(selection);
+			  hubbard.spread(amount);
+			  hubbard.mixedFruit();
+			  hubbard.print();
+		  }
 	  }
   }
 }
